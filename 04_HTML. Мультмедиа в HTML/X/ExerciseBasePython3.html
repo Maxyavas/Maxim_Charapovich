@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Python3</title>
+        <style>
+            .rightimg {
+             float:right; 
+             margin: 1% 52% 1% 0; /* Отступы вокруг картинки */
+             width:20%; height:20%
+            }
+            
+        </style>
+    </head>
+    <body>
+    </strong><img title="PythonLogo" src="../pythons.png" class="rightimg" alt="python">
+
+    <H1 id="start3"><strong>HOW-TO: Программа на Python, Часть 3</strong></H1> 
+        
+    <UL>
+        <LI><i><a href="ExerciseBasePython1.html">Программа на Python &mdash; часть 1</a></i></LI>
+        <LI><i><a href="ExerciseBasePython2.html">Программа на Python &mdash; часть 2</a></i></LI>
+        <LI><i><a href="ExerciseBasePython3.html">Программа на Python &mdash; часть 3</a></i></LI>
+    </UL>
+    
+    <H2><strong>Содержание</strong></H2>
+    
+    <H3><strong>HOW-TO: Программа на Python, Часть 3</strong></H3>
+
+    <UL>
+        <LI><a href="#modules">Модули</a></LI>
+        <LI><a href="#function">Функции</a></LI>
+    </UL>
+    <br>
+    <hr>
+
+    <P>В прошлый раз мы изучали списки, подстановку переменных, комментарии, сравнение и <br> присвоение, 
+    операторы <strong>if</strong> и <strong>while</strong>. Я обещал, что в этой части мы изучим модули  
+    и <br> функции. Давайте начнём.</P>
+    
+    <H2 id="modules"><strong>Модули</strong></H2>
+
+    <P>Модули предлагают способ расширить программирование на Python. Вы можете создать <br> свои модули,
+        использовать те, которые поставляются с Python или коорые написали <br> другие. В самом Python есть  
+        сотни модулей , которые облегчают написание программ. <br> Список модулей, поставляемых с Python,
+        находится по адресу: <br><i><a href="http://docs.python.org/modindex.html"> http://docs.python.org/modindex.html.</a></i> Некоторые модули предназначены
+        для определённых <br> операционных систем, но большинство из них кроссплатформенные и работаю <br>
+        одинаково на <a href="https://ru.wikipedia.org/wiki/Linux" target="_blank">Linux</a>, <a href="https://ru.wikipedia.org/wiki/Macintosh" target="_blank">Mac</a> и 
+        <a href="https://ru.wikipedia.org/wiki/Windows" target="_blank">Microsoft Windows</a>. Для использования внешнего модуля <br>
+        необходимо импортировать его в программу. Один из модулей, поставляемых с Python, <br> называется
+        &laquo;random&raquo;. Она даёт возможность генерировать псевдослучайные числа. Мы <br> используем
+        этот модуль в нашем первом примере.</P>
+        
+    <br>
+    <kbd>#======================================= <br> # random_example.py <br> # Module example using the random
+        module <br> #======================================= <br> import random <br> # print 14 random integers <br>
+        for cntr in range (1,15): <br> &nbsp;&nbsp;&nbsp; print random.randint (1,10)</kbd>
+
+    <p>Давайте разберём код по строкам. Первые четыре строки &mdash; это комментарии, о которых <br> мы
+       говорили в прошлый раз. Пятая строка говорит Python, что нужно использовать <br> модуль 
+       &laquo;random&raquo;. Мы должны явно указать Python на это.</p>
+        
+    <br>
+    <hr>
+    
+    <H2 id="function"><strong>Функции</strong></H2>
+
+    <p>Когда мы импортировал модуль random, мы использовали функцию <strong>randint()</strong>. Функция <br>
+        &mdash; это блок кода, который создан для того, чтобы вызывать его в программе, обычно, <br> более
+        одного раза. Это упрощает работу над программой и предотвращает набор одного и <br> того же кода снова
+        и снова. Грубо говоря, если вам нужно написать некоторый код <br> больше, чем 1-2 раза, стоит сделать
+        его функцией. Хотя следующие два примера очень <br> простые, это хорошие примеры функций. Теперь мы
+        хотим, скажем, взяь два числа, <br> сложить их, перемножить, вычесь одно из другого, затем вывести на
+        экран эти числа и <br> результаты одновременно. Допусим, нам нужно сделать это ри раза для трёх 
+        наборов <br> чисел. Тогда наш пример будет выглядеть как код ниже.</p>
+        
+    <kbd>#silly example <br> print '%d + %d = %d ' % (1,2,1+2) <br> print '%d * %d = %d ' % (1,2,1*2) <br>
+        print '%d - %d = %d ' % (1,2,1-2) </kbd>
+    
+    <br>
+    <br>
+    <kbd>print '\n' <br> print '%d + %d = %d ' % (1,4,1+4) <br> print '%d * %d = %d ' % (1,4,1*4) <br>
+        print '%d - %d = %d ' % (1,4,1-4) </kbd>
+
+    <br>
+    <br>
+    <kbd>print '\n' <br> print '%d + %d = %d ' % (10,5,10+5) <br> print '%d * %d = %d ' % (10,5,10*5) <br>
+        print '%d - %d = %d ' % (10,5,10-5) <br> print '\n' </kbd>
+        
+    <p>Здесь нужно не только набрать много текста, но и непременно возникнут ошибки как при <br> написании, 
+        так и при внесении изменений. Вместо этого мы создадим функцию, которую <br> назовём 
+        <strong><i>&laquo;DoTwo&raquo;</i></strong>. Она будет каждый раз брать два числа, проводить 
+        метематические <br> операции и выводить результат. Начнём с ключевого слова <strong><i>&laquo;def&raquo;</i></strong>,
+        которое сигнализирует <br> о том, чо мы собираемся определить функцию. После слова
+        <strong><i>&laquo;DoTwo&raquo;</i></strong> добавим название <br> функции и список параметров, если
+        таковые имеются, в круглых скобках. Эту строку <br> необходимо завершить двоеточием. Код функции
+        набирается с отступом. Наш <br> улучшенный простой пример (<a href="#numberTwo">№2</a>) показан ниже.</p>
+        
+    <kbd id="numberTwo">#silly example 2...still silly, but better <br> def DoTwo (num1, num2): <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print '%d + %d = %d ' % (num1,num2,num1+num2) <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print '%d * %d = %d ' % (num1,num2,num1*num2) <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print '%d - %d = %d ' % (num1,num2,num1-num2) <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print '\n' <br>
+        DoTwo (1,2) <br>
+        DoTwo (1,4) <br>
+        DoTwo (10,5)
+    </kbd>
+   
+    <p>Как видите, здесь написано меньше кода &mdash; 8 строк вместо 12. Если нам нужно будет что <br> -либо поменять в функции
+        мы сможем сделать это, не создавая проблем для нашей <br> программы. Чтобы вызвать функцию, нужно написать её 
+        имя и параметры </p>
+    
+    <a href="ExerciseBasePython2.html"><img title="back" src="../leftW.png" style="width: 5%;height: 5%; float:left" alt="Предыдущая страница"></a>
+    <a href="#start3"><img title="home" src="../homeW.png" style="width: 5%;height: 5%;" class="center" alt="Начало страницы"></a>
+    <a href="#"><img title="forward" src="../rightW.png" style="width: 5%;height: 5%; float:right" alt="Следующая страница"></a>
+</body>
+</html>
