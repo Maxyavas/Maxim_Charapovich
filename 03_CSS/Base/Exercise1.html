@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table tr tr {
+			    display: none;
+			    position: absolute;
+			    top: 100%;
+			}
+			
+			/* отображаем выпадающий список при наведении */
+		table tr td:hover > tr {
+			    display:inherit;
+			}
+			
+			/* первый уровень выпадающего списка */
+		table tr tr td {
+			    min-width:170px;
+			    float:none;
+			    display:list-item;
+			    position: relative;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td><a href="#">Понедельник</a></td>
+        <td><a href="#">Вторник</a></td>
+        <td><a href="#">Среда</a>
+            <tr>
+                <td><a href="#">Завтрак</a></td>
+                <td><a href="#">Обед</a></td>
+                <td><a href="#">Ужин</a></td>
+            </tr>
+        </td>
+        <td><a href="#">Четверг</a></td>
+        <td><a href="#">Пятница</a></td>
+        <td><a href="#">Суббота</a></td>
+    </tr>
+</table>
+</body>
+</html>
